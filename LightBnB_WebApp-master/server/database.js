@@ -1,11 +1,13 @@
 const { Pool } = require('pg');
+require("dotenv").config();
 
 const pool = new Pool({
-  user: 'vagrant',
-  password: '123',
-  host: 'localhost',
-  database: 'lightbnb'
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  host: process.env.DBHOST,
+  database: process.env.DBNAME,
 });
+
 
 /// Users
 
